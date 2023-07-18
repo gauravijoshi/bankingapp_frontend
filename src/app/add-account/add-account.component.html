@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Account Activation</div>
+    <div class="content">
+      <form (ngSubmit)="addAccounts()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">User Id</span>
+            <input type="number" id="userId" name="userId" ngModel #Id = "ngModel" [(ngModel)]="addAccount.userId" required>
+            <div style="color: crimson;" *ngIf="Id.dirty">
+              <div *ngIf="Id.errors && Id.errors['required']">
+                Id is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Account Balance</span>
+            <input id="accountBalance" type="number" name="accountBalance" ngModel #Balance = "ngModel" [(ngModel)]="addAccount.accountBalance" required>
+            <div style="color: crimson;" *ngIf="Balance.dirty">
+              <div *ngIf="Balance.errors && Balance.errors['required']">
+                Account Balance is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Minimum Balance</span>
+            <input id="minimumBalance" type="number" name="minimumBalance" ngModel #Minbal = "ngModel" [(ngModel)]="addAccount.minimumBalance" required>
+            <div style="color: crimson;" *ngIf="Minbal.dirty">
+              <div *ngIf="Minbal.errors && Minbal.errors['required']">
+                Minimum Balance is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Date Of Opening</span>
+            <input type="date" id="date" name="date" ngModel #Date = "ngModel" [(ngModel)]="addAccount.date" required>
+            <div style="color: crimson;" *ngIf="Date.dirty">
+              <div *ngIf="Date.errors && Date.errors['required']">
+                Date of opening is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Description</span>
+            <input id="description" type="text" name="description" ngModel #Description = "ngModel" [(ngModel)]="addAccount.description" required>
+            <div style="color: crimson;" *ngIf="Description.dirty">
+              <div *ngIf="Description.errors && Description.errors['required']">
+                Description is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Account Type</span>
+            <input id="accountType" type="text" name="accountType" ngModel #AccType = "ngModel" [(ngModel)]="addAccount.accountType" required>
+            <div style="color: crimson;" *ngIf="AccType.dirty">
+              <div *ngIf="AccType.errors && AccType.errors['required']">
+                Account type is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Add Account">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

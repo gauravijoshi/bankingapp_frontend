@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Deposit</div>
+    <div class="content">
+      <form (ngSubmit)="deposit()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Account Number</span>
+            <input type="number" id="accountNumber" name="accountNumber" ngModel #AccNumber = "ngModel" [(ngModel)]="account.accountNumber" required>
+            <div style="color: crimson;" *ngIf="AccNumber.dirty">
+              <div *ngIf="AccNumber.errors && AccNumber.errors['required']">
+                Account Number is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Amount</span>
+            <input type="number" id="amount" name="amount" ngModel #Amount = "ngModel" [(ngModel)]="account.amount" required>
+            <div style="color: crimson;" *ngIf="Amount.dirty">
+              <div *ngIf="Amount.errors && Amount.errors['required']">
+                Amount is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Deposit">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

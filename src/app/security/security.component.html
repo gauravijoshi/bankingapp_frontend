@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Login</div>
+    <div class="content">
+      <form (ngSubmit)="loginProcess()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="name" id="userName" name="userName" ngModel #Username = "ngModel" [(ngModel)]="user.userName" required>
+            <div style="color: crimson;" *ngIf="Username.dirty">
+              <div *ngIf="Username.errors && Username.errors['required']">
+                Username is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="password" name="password" ngModel #Password = "ngModel" [(ngModel)]="user.password" required>
+            <div style="color: crimson;" *ngIf="Password.dirty">
+              <div *ngIf="Password.errors && Password.errors['required']">
+                Password is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <input id="button1" type="submit" value="Login">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

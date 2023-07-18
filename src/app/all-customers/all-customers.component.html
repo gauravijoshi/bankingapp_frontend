@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mini Statement</title>
+</head>
+<body> 
+    
+    <table >
+	<tr>
+	    <th>Person Id</th>
+        <th>Name</th>
+	    <th>Date of Birth</th>
+	    <th>Email Id</th>
+	    <th>Gender</th>
+	    <th>Contact</th>
+        <th>Address</th>
+        <th>Branch id</th>
+        <th>User id</th>
+  	</tr>
+   <!-- <li *ngFor="let hero of heroes">
+   </li> -->
+  	<tr *ngFor="let customer of customers">
+  		<td>{{customer.personId}}</td>
+  		<td>{{customer.personName}}</td>
+  		<td>{{customer.dob}}</td>
+  		<td>{{customer.email}}</td>
+  		<td>{{customer.gender}}</td>
+      <td>{{customer.telephoneNumber}}</td>
+      <td>{{customer.address.flatNo}}, {{customer.address.city}}, {{customer.address.state}}, {{customer.address.pincode}}</td>
+      <td>{{customer.branch.branchId}}</td>
+      <td>{{customer.user.userId}}</td>
+
+  	</tr>
+	</table>
+
+	<br><br><br>
+   <br><br><br>
+   <br><br><br>
+   <br><br><br>
+    
+</body>
+</html>

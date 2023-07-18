@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Update Customer</div>
+    <div class="content">
+      <form (ngSubmit)="editCustomers()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Enter id of the person to be updated</span>
+            <input type="number" id="personId" name="personId" ngModel #Id = "ngModel" [(ngModel)]="personalInfo.personId" required>
+            <div style="color: crimson;" *ngIf="Id.dirty">
+              <div *ngIf="Id.errors && Id.errors['required']">
+                Id is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" id="personName" name="personName" ngModel #Name = "ngModel" [(ngModel)]="personalInfo.personName" required>
+            <div style="color: crimson;" *ngIf="Name.dirty">
+              <div *ngIf="Name.errors && Name.errors['required']">
+                Name is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Gender</span>
+            <input type="text" id="gender" name="gender" ngModel #Gender = "ngModel" [(ngModel)]="personalInfo.gender" required>
+            <div style="color: crimson;" *ngIf="Gender.dirty">
+              <div *ngIf="Gender.errors && Gender.errors['required']">
+                Gender is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Date of Birth</span>
+            <input type="date" id="dob" name="dob" ngModel #Dob = "ngModel" [(ngModel)]="personalInfo.dob" required>
+            <div style="color: crimson;" *ngIf="Dob.dirty">
+              <div *ngIf="Dob.errors && Dob.errors['required']">
+                Date of Birth is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Contact</span>
+            <input type="number" id="telephoneNumber" name="telephoneNumber" ngModel #Contact = "ngModel" [(ngModel)]="personalInfo.telephoneNumber" required>
+            <div style="color: crimson;" *ngIf="Contact.dirty">
+              <div *ngIf="Contact.errors && Contact.errors['required']">
+                Contact is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" id="email" name="email" ngModel #Email = "ngModel" [(ngModel)]="personalInfo.email" required>
+            <div style="color: crimson;" *ngIf="Email.dirty">
+              <div *ngIf="Email.errors && Email.errors['required']">
+                Email is required
+              </div>
+            </div>
+          </div>
+
+
+          <div class="input-box">
+            <span class="details">Flat no.</span>
+            <input type="text" id="flatNo" name="flatNo" ngModel #Flat_No = "ngModel" [(ngModel)]="personalInfo.flatNo" required>
+            <div style="color: crimson;" *ngIf="Flat_No.dirty">
+              <div *ngIf="Flat_No.errors && Flat_No.errors['required']">
+                Flat No is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">City</span>
+            <input type="text" id="city" name="city" ngModel #City = "ngModel" [(ngModel)]="personalInfo.city" required>
+            <div style="color: crimson;" *ngIf="City.dirty">
+              <div *ngIf="City.errors && City.errors['required']">
+                City is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">State</span>
+            <input type="text" id="state" name="state" ngModel #State = "ngModel" [(ngModel)]="personalInfo.state"  required>
+            <div style="color: crimson;" *ngIf="State.dirty">
+              <div *ngIf="State.errors && State.errors['required']">
+                State is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Pincode</span>
+            <input type="number" id="pincode" name="pincode" ngModel #Pincode = "ngModel" [(ngModel)]="personalInfo.pincode" required>
+            <div style="color: crimson;" *ngIf="Pincode.dirty">
+              <div *ngIf="Pincode.errors && Pincode.errors['required']">
+                Pincode is required
+              </div>
+            </div>
+          </div>
+
+
+          <div class="input-box">
+            <span class="details">Branch Name</span>
+            <input type="text" id="branchName" name="branchName"  ngModel #Branch = "ngModel"[(ngModel)]="personalInfo.branchName" required>
+            <div style="color: crimson;" *ngIf="Branch.dirty">
+              <div *ngIf="Branch.errors && Branch.errors['required']">
+                Branch name is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">IFSC Code</span>
+            <input type="text" id="ifsc" name="ifsc"  ngModel #Ifsc = "ngModel"[(ngModel)]="personalInfo.ifsc" required>
+            <div style="color: crimson;" *ngIf="Ifsc.dirty">
+              <div *ngIf="Ifsc.errors && Ifsc.errors['required']">
+                IFSC code is required
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="button">
+          <input type="submit" value="Update Customer">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

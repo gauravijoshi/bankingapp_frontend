@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Fund Transfer</div>
+    <div class="content">
+      <form (ngSubmit)="fundTransfer()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">From Account</span>
+            <input type="number" id="fromAccount" name="fromAccount" ngModel #FromAccNumber = "ngModel" [(ngModel)]="transaction.fromAccount" required>
+            <div style="color: crimson;" *ngIf="FromAccNumber.dirty">
+              <div *ngIf="FromAccNumber.errors && FromAccNumber.errors['required']">
+                From Account is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">To Account</span>
+            <input type="number" id="toAccount" name="toAccount" ngModel #ToAccNumber = "ngModel" [(ngModel)]="transaction.toAccount" required>
+            <div style="color: crimson;" *ngIf="ToAccNumber.dirty">
+              <div *ngIf="ToAccNumber.errors && ToAccNumber.errors['required']">
+                To Account is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Amount</span>
+            <input type="number" id="amount" name="amount" ngModel #Amount = "ngModel" [(ngModel)]="transaction.amount" required>
+            <div style="color: crimson;" *ngIf="Amount.dirty">
+              <div *ngIf="Amount.errors && Amount.errors['required']">
+                Amount is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Transfer Amount">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

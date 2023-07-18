@@ -1,0 +1,29 @@
+.statement{  
+    width: 382px;  
+    overflow: hidden;  
+    margin: auto;  
+    margin: 20 0 0 450px;  
+    padding: 80px;  
+    background: #3CB371;  
+    border-radius: 10px ;  
+    text-align: center; 
+    margin-top:50px;  
+}  
+
+h2{  
+text-align: center;  
+color: black;  
+padding: 20px;  
+}  
+
+table{
+table-layout: fixed;
+width:100%;
+text-align:center;
+margin-top:20px;
+}  
+
+tr, th, td {
+border-bottom: 1px solid ;
+}
+

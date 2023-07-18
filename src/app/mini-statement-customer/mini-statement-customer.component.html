@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Mini Statement</div>
+    <div class="content">
+      <form (ngSubmit)="miniStatement()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Enter Account Number</span>
+            <input type="number" ngModel #AccNumber = "ngModel" [(ngModel)]="transactions.fromAccount" id="fromAccount" name="fromAccount" required>
+            <div style="color: crimson;" *ngIf="AccNumber.dirty">
+              <div *ngIf="AccNumber.errors && AccNumber.errors['required']">
+                Account Number is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Generate Mini Statement">
+        </div>
+      </form>
+    </div>
+  <div class="container">  
+  <table >
+	<tr>
+	    <th>Transaction Id</th>
+	    <th>Depositor Account</th>
+	    <th>Recipient Account</th>
+	    <th>Amount</th>
+	    <th>Date of Transaction</th>
+        <th>Status</th>
+        <th>Description</th>
+  	</tr>
+
+  	<tr *ngFor="let transaction of statement">
+  		<td>{{transaction.transactionId}}</td>
+  		<td>{{transaction.fromAccount.accountNumber}}</td>
+  		<td>{{transaction.toAccount.accountNumber}}</td>
+  		<td>{{transaction.amount}}</td>
+  		<td>{{transaction.dateOfTransaction}}</td>
+      <td>{{transaction.transactionStatus}}</td>
+      <td>{{transaction.description}}</td>
+  	</tr>
+	</table>
+</div>
+</div>
+</body>
+</html>

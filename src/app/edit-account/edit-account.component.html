@@ -1,0 +1,70 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Update Account</div>
+    <div class="content">
+      <form (ngSubmit)="editAccounts()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Account Number</span>
+            <input type="number" id="accountNumber" name="accountNumber" ngModel #AccNumber = "ngModel" [(ngModel)]="editAccount.accountNumber" required>
+            <div style="color: crimson;" *ngIf="AccNumber.dirty">
+              <div *ngIf="AccNumber.errors && AccNumber.errors['required']">
+                Account Number is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Minimum Balance</span>
+            <input type="number" id="minimumBalance" name="minimumBalance" ngModel #Minbal = "ngModel" [(ngModel)]="editAccount.minimumBalance"  required>
+            <div style="color: crimson;" *ngIf="Minbal.dirty">
+              <div *ngIf="Minbal.errors && Minbal.errors['required']">
+                Minimum Balance is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Date Of Opening</span>
+            <input type="date" id="date" name="date" ngModel #Date = "ngModel" [(ngModel)]="editAccount.date"  required>
+            <div style="color: crimson;" *ngIf="Date.dirty">
+              <div *ngIf="Date.errors && Date.errors['required']">
+                Date of opening is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Description</span>
+            <input type="text" id="description" name="description" ngModel #Description = "ngModel" [(ngModel)]="editAccount.description" required>
+            <div style="color: crimson;" *ngIf="Description.dirty">
+              <div *ngIf="Description.errors && Description.errors['required']">
+                Description is required
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Account Type</span>
+            <input type="text" id="accountType" name="accountType" ngModel #AccType = "ngModel" [(ngModel)]="editAccount.accountType" required>
+            <div style="color: crimson;" *ngIf="AccType.dirty">
+              <div *ngIf="AccType.errors && AccType.errors['required']">
+                Account type is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Update Account">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

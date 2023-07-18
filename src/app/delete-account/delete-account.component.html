@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Deactivate Account</div>
+    <div class="content">
+      <form (ngSubmit)="inactive()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Enter Account Number</span>
+            <input type="number" ngModel #AccNumber = "ngModel" [(ngModel)]="accountNumber" id="accountNumber" name="accountNumber" required>
+            <div style="color: crimson;" *ngIf="AccNumber.dirty">
+              <div *ngIf="AccNumber.errors && AccNumber.errors['required']">
+                Account Number is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Deactivate">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

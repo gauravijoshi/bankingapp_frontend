@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Header</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <nav>
+      
+      <label class="logo">
+        <img width="100px" height="70px" src="assets/download.png" >
+      </label>
+      <ul>
+        <li><a class="active" routerlink="">Home</a></li>
+        <li><a class="active" routerlink="">About</a></li>
+        <li><a *ngIf="!isLoggedIn" (click)="logout()">Logout</a></li>
+        
+      </ul>
+    </nav>
+  </body>
+</html>
+
